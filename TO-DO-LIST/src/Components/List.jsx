@@ -1,16 +1,16 @@
 import React from "react";
 import Item from "./Item";
 
-const List = ({ tasks, DeleteTask }) => {
+function List({ todos, deleteTask }) {
   return (
-    <>
+    <div>
       <ul>
-        {tasks.map((todo) => (
-          <Item key={tasks.id} todo={todo} delete={DeleteTask} />
+        {todos.map((todo) => (
+          <Item key={todo.id} todo={todo} deleteTask={deleteTask} />
         ))}
       </ul>
-    </>
+    </div>
   );
-};
+}
 
 export default List;

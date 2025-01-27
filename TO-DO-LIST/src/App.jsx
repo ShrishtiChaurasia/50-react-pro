@@ -3,25 +3,23 @@ import Addtask from "./Components/Addtask";
 import List from "./Components/List";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [todos, setTodos] = useState([]);
 
-  const Addingtask = (value) => {
-    if (value.trim === "") return;
-    const newTask = { id: Date.now(), text: value };
-    setTasks([...tasks, newTask]);
+  const addTask = (value) => {
+    if (value.trim() == "") return;
+    const newtask = { id: Date.now(), text: value };
+    setTodos([...todos, newtask]);
   };
+  console.log(todos);
 
-  const DeleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const deleteTask = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
-
   return (
     <>
-      <div>
-        <h1>TO DO LIST</h1>
-        <Addtask addtask={Addingtask} />
-        <List tasks={tasks} DeleteTask={DeleteTask} />
-      </div>
+      <h1>TO DO LIST</h1>
+      <Addtask addtask={addTask} />
+      <List todos={todos} deleteTask={deleteTask} />
     </>
   );
 };

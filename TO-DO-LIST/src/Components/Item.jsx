@@ -1,13 +1,20 @@
 import React from "react";
 
-const Item = ({ todo, DeleteTask }) => {
+const Item = ({ todo, deleteTask }) => {
   return (
-    <>
+    <div>
       <li>
         <span>{todo.text}</span>
-        <button onClick={() => DeleteTask(todo.id)}>Delete</button>
+        <span>{todo.id}</span>
+        <button
+          onClick={() => {
+            deleteTask(todo.id);
+          }}
+        >
+          DELETE
+        </button>
       </li>
-    </>
+    </div>
   );
 };
 

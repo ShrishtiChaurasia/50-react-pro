@@ -12,19 +12,15 @@ const Addtask = ({ addtask }) => {
     setTask("");
   };
   return (
-    <>
-      <div className="container">
-        <input
-          type="text"
-          placeholder="add task.."
-          onChange={handleChange}
-          value={task}
-        />
-        <button className="add-btn" onClick={handleSubmit}>
-          ADD
-        </button>
-      </div>
-    </>
+    <div className="container">
+      <input
+        type="text"
+        placeholder="enter a task.."
+        onChange={handleChange}
+        value={task}
+      />
+      <button onClick={handleSubmit}>ADD</button>
+    </div>
   );
 };
 
